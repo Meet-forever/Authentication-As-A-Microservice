@@ -1,5 +1,4 @@
 # Authentication as a microservice
----
 
 - Creating an independent and highly customizable authentication microservice, which can scale horizontally.
 
