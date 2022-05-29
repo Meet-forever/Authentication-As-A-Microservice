@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 
-const startDatabase = async(uri?: string, options?: mongoose.ConnectOptions):Promise<void> => {  
-        if(uri)
-        await mongoose.connect(uri, options)
+const startDatabase = async(uri: string):Promise<void> => { 
+        await mongoose.connect(uri)
         .then(()=> console.log('Connected to MongoDB'))
         .catch(e => console.error(e))
 }

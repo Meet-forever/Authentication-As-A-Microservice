@@ -6,5 +6,6 @@ export const isValidPassword = async(password:string, hpass:string) =>{
 } 
 
 export const generateHashPassword  = async(password:string) =>{
-    return await bcrypt.hash(password, process.env.SALTROUNDS as string)
+    const salt = await bcrypt.genSalt(Number(process.env.SALTROUNDS));
+    return await bcrypt.hash(password, salt);
 }

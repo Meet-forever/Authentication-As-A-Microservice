@@ -2,8 +2,12 @@ import { app } from './app';
 import { startDatabase } from './config/database';
 import dotenv from "dotenv"
 dotenv.config()
+const { 
+    PORT = 8000,
+    DB_URI = `mongodb://localhost:27017/testDB`
+} = process.env
 
-app.listen(process.env.PORT, async():Promise<void> => {
-    await startDatabase(process.env.DB_URI, undefined)
-    console.log(`Listening on PORT ${process.env.PORT}`)
+app.listen(PORT!, async():Promise<void> => {
+    await startDatabase(DB_URI);
+    console.log(`Listening on PORT ${PORT}`)
 });
